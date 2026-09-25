@@ -99,6 +99,7 @@
 
   /* Calculator */
   .calc { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; margin-top: 44px; align-items: start; }
+  .calc > * { min-width: 0; }
   .ctrl { display: grid; gap: 26px; }
   .ctrl label { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; margin-bottom: 8px; }
   .ctrl label b { font-family: var(--mono); color: var(--volt); font-variant-numeric: tabular-nums; }
@@ -200,6 +201,20 @@
   .vcard:not(.win) .loc b { color: var(--paper); }
   .kw { font-family: var(--mono); background: var(--volt); color: var(--asphalt); padding: 1px 8px; font-weight: 600; }
   @media (max-width: 760px) { .vs { grid-template-columns: 1fr; } }
+
+  /* Scenarios */
+  .presets { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+  .presets button { font: 600 14px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--paper); background: transparent; border: 1px solid var(--line); padding: 12px 18px; cursor: pointer; }
+  .presets button:hover { border-color: var(--volt); }
+  .presets button[aria-pressed="true"] { background: var(--volt); color: var(--asphalt); border-color: var(--volt); }
+  .presets button:focus-visible { outline: 2px solid var(--volt); outline-offset: 3px; }
+  .funnel { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 22px; }
+  .funnel div { background: var(--asphalt-2); padding: 18px 16px; }
+  .funnel .k { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .funnel .v { font-family: var(--display); font-weight: 900; font-size: clamp(32px, 4vw, 48px); line-height: 1.05; font-variant-numeric: tabular-nums; }
+  .funnel div:last-child .v { color: var(--volt); }
+  .countdown { font-variant-numeric: tabular-nums; }
+  @media (max-width: 760px) { .funnel { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 760px) {
     body { font-size: 16px; }
     .calc, .split { grid-template-columns: 1fr; }
@@ -360,10 +375,56 @@
   </div>
 </section>
 
-<!-- S6 KONTINUITÄT -->
-<section data-sec="S7 · Kontinuität">
+<!-- SZENARIEN -->
+<section data-sec="S7 · Potenzial">
   <div class="wrap">
-    <div class="sector rv">Sektor 7 · Kontinuität</div>
+    <div class="sector rv">Sektor 7 · Was möglich ist</div>
+    <h2 class="rv">Die Neugier ist schon da.</h2>
+    <p class="lead rv d1">Noch bevor die erste Runde gefahren ist, hat Gießen reagiert. Diese Aufmerksamkeit ist ein Startkapital, das man nur einmal bekommt. Wird sie zur Eröffnung richtig bespielt, kann Kart&amp;Fun in den ersten Wochen richtig durchstarten.</p>
+    <div class="stats">
+      <div class="stat rv"><div class="n" data-count="38000">38.000</div><div class="l">Aufrufe für euer allererstes Reel</div></div>
+      <div class="stat hl rv d1"><div class="n">1,1<small>Mio.</small></div><div class="l">Reichweite für den Beitrag von Gießen aktuell über euch</div></div>
+      <div class="stat rv d2"><div class="n countdown" id="cd">67</div><div class="l">Tage bis zur Eröffnung am 1. Dezember 2026</div></div>
+    </div>
+    <div class="callout rv"><b>Eröffnung am 1. Dezember heißt: mitten in der Weihnachtsfeier-Saison.</b> Firmen suchen genau jetzt nach Ideen für ihre Feier, und Gutscheine sind das perfekte Weihnachtsgeschenk. Wer im Dezember sichtbar ist, füllt nicht nur die Bahn, sondern verkauft auch die Besuche für Januar und Februar gleich mit.</div>
+
+    <h3 class="rv" style="margin-top:72px">Szenario-Rechner: Gäste über Social Media pro Monat</h3>
+    <p class="rv">Wählt ein Szenario oder stellt die Annahmen selbst ein. Gerechnet wird: lokale Aufrufe → Profilbesuche → Buchungen → Gäste.</p>
+    <div class="presets rv" role="group" aria-label="Szenario wählen">
+      <button type="button" data-p="vorsichtig">Vorsichtig</button>
+      <button type="button" data-p="realistisch" aria-pressed="true">Realistisch</button>
+      <button type="button" data-p="boom">Eröffnungs-Boom</button>
+    </div>
+    <div class="calc rv" style="margin-top:28px">
+      <div class="ctrl">
+        <div><label for="fv">Aufrufe aus der Region pro Monat<b id="fvv">40.000</b></label><input type="range" id="fv" min="5000" max="200000" step="5000" value="40000"><div class="hint">Zum Vergleich: Euer erstes Reel allein hatte 38.000 Aufrufe.</div></div>
+        <div><label for="fp">Davon schauen aufs Profil<b id="fpv">2,5 %</b></label><input type="range" id="fp" min="0.5" max="6" step="0.5" value="2.5"></div>
+        <div><label for="fb">Davon buchen einen Besuch<b id="fbv">4 %</b></label><input type="range" id="fb" min="1" max="10" step="0.5" value="4"></div>
+        <div><label for="fg">Personen pro Buchung<b id="fgv">3</b></label><input type="range" id="fg" min="1" max="8" step="1" value="3"></div>
+        <div><label for="fu">Umsatz pro Gast<b id="fuv">41 €</b></label><input type="range" id="fu" min="25" max="70" step="1" value="41"><div class="hint">41 € = 30 Minuten Standard-Ticket in Hungen, ohne Getränke</div></div>
+      </div>
+      <div class="board" aria-live="polite">
+        <div class="k">Zusätzliche Gäste pro Monat</div>
+        <div class="big" id="fgs">120</div>
+        <div class="k">Umsatz daraus</div>
+        <div class="big" id="fum" style="color:var(--volt)">4.920 €</div>
+        <div class="verdict" id="fvd">Das ist das <b>3,3-fache</b> der Investition.</div>
+      </div>
+    </div>
+    <div class="funnel rv">
+      <div><div class="k">Lokale Aufrufe</div><div class="v" id="f1">40.000</div></div>
+      <div><div class="k">Profilbesuche</div><div class="v" id="f2">1.000</div></div>
+      <div><div class="k">Buchungen</div><div class="v" id="f3">40</div></div>
+      <div><div class="k">Gäste</div><div class="v" id="f4">120</div></div>
+    </div>
+    <p class="src">Modellrechnung mit Annahmen, keine Zusage über Aufrufe oder Buchungen. 38.000 Aufrufe und 1,1 Mio. Reichweite: eure Zahlen, Stand September 2026. Preis: kartbahn-hungen.de/preise.</p>
+  </div>
+</section>
+
+<!-- S6 KONTINUITÄT -->
+<section data-sec="S8 · Kontinuität">
+  <div class="wrap">
+    <div class="sector rv">Sektor 8 · Kontinuität</div>
     <h2 class="rv">Eine Runde gewinnt kein Rennen.</h2>
     <p class="lead rv d1">Instagram und TikTok belohnen Accounts, die verlässlich posten. Der Algorithmus lernt mit jedem Video, wem er euch zeigen soll. Wer nach zwei Monaten aufhört, bricht genau dann ab, wenn es anfängt zu wirken.</p>
     <svg class="curve rv" id="curve" viewBox="0 0 1000 380" role="img" aria-label="Schematischer Verlauf: kontinuierliche Arbeit steigt über 12 Monate stetig an, sporadisches Posten bleibt flach.">
@@ -386,9 +447,9 @@
 </section>
 
 <!-- S7 QUALITÄT -->
-<section data-sec="S8 · Qualität">
+<section data-sec="S9 · Qualität">
   <div class="wrap">
-    <div class="sector rv">Sektor 8 · Qualität statt Menge</div>
+    <div class="sector rv">Sektor 9 · Qualität statt Menge</div>
     <h2 class="rv">Lieber jeden dritten Tag als jeden Tag Müll.</h2>
     <p class="lead rv d1">Ein schwaches Video schadet mehr, als es nützt: Danach zeigt der Algorithmus eure nächsten Videos weniger Leuten. Wir versprechen keine Aufrufzahlen. Wir versprechen Qualität und Beständigkeit.</p>
     <div class="stats">
@@ -412,9 +473,9 @@
 </section>
 
 <!-- S8 DOKU -->
-<section data-sec="S9 · Doku">
+<section data-sec="S10 · Doku">
   <div class="wrap">
-    <div class="sector rv">Sektor 9 · Die große Idee</div>
+    <div class="sector rv">Sektor 10 · Die große Idee</div>
     <h2 class="rv">Wir drehen nicht nur Werbung. Wir drehen eure Geschichte.</h2>
     <p class="lead rv d1">Menschen lieben es, dabei zu sein, wenn etwas entsteht. Genau so sind Kanäle wie JP Performance groß geworden: Man verfolgt echte Leute bei einem echten Projekt, mit allen Erfolgen und allen Problemen. Kart&amp;Fun hat genau diese Geschichte, und sie passiert jetzt.</p>
     <div class="grid">
@@ -434,9 +495,9 @@
 </section>
 
 <!-- S8 CONTENT -->
-<section data-sec="S10 · Content">
+<section data-sec="S11 · Content">
   <div class="wrap">
-    <div class="sector rv">Sektor 10 · Content-Ideen</div>
+    <div class="sector rv">Sektor 11 · Content-Ideen</div>
     <h2 class="rv">Was wir drehen.</h2>
     <p class="lead rv d1">Geschwindigkeit, Wettkampf, etwas Neues und echte Menschen: Eine E-Kartbahn hat alles, was auf Social Media funktioniert.</p>
     <div class="grid">
@@ -454,9 +515,9 @@
 </section>
 
 <!-- AKTIONEN -->
-<section data-sec="S11 · Aktionen">
+<section data-sec="S12 · Aktionen">
   <div class="wrap">
-    <div class="sector rv">Sektor 11 · Aktionen &amp; Kommentar-Automatik</div>
+    <div class="sector rv">Sektor 12 · Aktionen &amp; Kommentar-Automatik</div>
     <h2 class="rv">Vom Video an die Kasse.</h2>
     <p class="lead rv d1">Ein gutes Video allein bringt noch keinen Gast. Deshalb bauen wir einen Weg vom Video bis zur Buchung, der automatisch läuft und sich an der Kasse messen lässt.</p>
     <div class="steps">
@@ -488,9 +549,9 @@
 </section>
 
 <!-- S9 ROLLEN -->
-<section data-sec="S12 · Rollen">
+<section data-sec="S13 · Rollen">
   <div class="wrap">
-    <div class="sector rv">Sektor 12 · Wer macht was</div>
+    <div class="sector rv">Sektor 13 · Wer macht was</div>
     <h2 class="rv">Wir drehen. Ihr bleibt im Gespräch.</h2>
     <p class="lead rv d1">Wir sind einmal im Monat vor Ort, ihr seid jeden Tag da. Deshalb gehören zwei Aufgaben fest zu euch, und sie sind Teil des Konzepts.</p>
     <div class="split">
@@ -514,9 +575,9 @@
 </section>
 
 <!-- S10 MONAT -->
-<section data-sec="S13 · Ablauf">
+<section data-sec="S14 · Ablauf">
   <div class="wrap">
-    <div class="sector rv">Sektor 13 · Ein Monat</div>
+    <div class="sector rv">Sektor 14 · Ein Monat</div>
     <h2 class="rv">So läuft eine Runde.</h2>
     <div class="steps">
       <div class="step rv"><div class="w">Woche 1</div><h3>Planung</h3><p>Kurze Abstimmung: Was steht an? Daraus wird der Drehplan.</p></div>
@@ -530,9 +591,9 @@
 </section>
 
 <!-- S11 LANGFRISTIG -->
-<section data-sec="S14 · Laufzeit">
+<section data-sec="S15 · Laufzeit">
   <div class="wrap">
-    <div class="sector rv">Sektor 14 · Langfristig</div>
+    <div class="sector rv">Sektor 15 · Langfristig</div>
     <h2 class="rv">Wir wachsen mit euch.</h2>
     <p class="lead rv d1">Je länger wir zusammenarbeiten, desto besser kennen wir euer Publikum und desto mehr bringt jeder Drehtag. Der Preis gilt fest für 12 Monate. Danach schauen wir gemeinsam auf die Ergebnisse und legen das nächste Jahr fest. Wenn ihr wachst, wachsen auch die Aufgaben, und der Preis wird eher steigen.</p>
     <div class="price">
@@ -637,6 +698,47 @@
     else v.innerHTML = 'Noch <b>' + fmt(1500 - sum) + ' €</b> bis die Investition gedeckt ist.';
   }
   [g1, kg, tk].forEach(function (i) { i.addEventListener('input', calc); }); calc();
+  // Countdown to opening
+  (function () {
+    var el = document.getElementById('cd'); if (!el) return;
+    var d = Math.ceil((new Date(2026, 11, 1) - new Date()) / 86400000);
+    if (d > 0) { el.textContent = d; el.dataset.count = d; }
+    else { el.textContent = 'Offen'; el.nextElementSibling.textContent = 'Eröffnet am 1. Dezember 2026'; }
+  })();
+
+  // Scenario funnel
+  var P = { vorsichtig: [20000, 2, 3, 3, 41], realistisch: [40000, 2.5, 4, 3, 41], boom: [120000, 3, 5, 3, 41] };
+  var ids = ['fv', 'fp', 'fb', 'fg', 'fu'];
+  var inp = ids.map(function (i) { return document.getElementById(i); });
+  var pct = function (x) { return (+x).toLocaleString('de-DE', { maximumFractionDigits: 1 }) + ' %'; };
+  function fcalc() {
+    var v = +inp[0].value, pp = +inp[1].value, b = +inp[2].value, g = +inp[3].value, u = +inp[4].value;
+    var prof = v * pp / 100, book = prof * b / 100, guests = book * g, rev = guests * u;
+    document.getElementById('fvv').textContent = fmt(v);
+    document.getElementById('fpv').textContent = pct(pp);
+    document.getElementById('fbv').textContent = pct(b);
+    document.getElementById('fgv').textContent = g;
+    document.getElementById('fuv').textContent = u + ' €';
+    document.getElementById('fgs').textContent = fmt(guests);
+    document.getElementById('fum').textContent = fmt(rev) + ' €';
+    document.getElementById('f1').textContent = fmt(v);
+    document.getElementById('f2').textContent = fmt(prof);
+    document.getElementById('f3').textContent = fmt(book);
+    document.getElementById('f4').textContent = fmt(guests);
+    var x = rev / 1500, vd = document.getElementById('fvd');
+    vd.innerHTML = x >= 1 ? 'Das ist das <b>' + x.toLocaleString('de-DE', { maximumFractionDigits: 1 }) + '-fache</b> der Investition.' : 'Noch <b>' + fmt(1500 - rev) + ' €</b> bis die Investition gedeckt ist.';
+  }
+  var btns = document.querySelectorAll('.presets button');
+  btns.forEach(function (bt) {
+    bt.addEventListener('click', function () {
+      P[bt.dataset.p].forEach(function (val, i) { inp[i].value = val; });
+      btns.forEach(function (o) { o.setAttribute('aria-pressed', o === bt ? 'true' : 'false'); });
+      fcalc();
+    });
+  });
+  inp.forEach(function (i) { i.addEventListener('input', function () { btns.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); }); fcalc(); }); });
+  fcalc();
+
 })();
 </script>
 
