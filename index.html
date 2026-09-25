@@ -215,6 +215,21 @@
   .funnel div:last-child .v { color: var(--volt); }
   .countdown { font-variant-numeric: tabular-nums; }
   @media (max-width: 760px) { .funnel { grid-template-columns: 1fr 1fr; } }
+
+  /* Presenter notes */
+  .pnote { display: none; border: 1px dashed var(--amber); background: rgba(255,176,32,.08); color: var(--paper); padding: 16px 20px; margin-bottom: 36px; font-size: 15px; line-height: 1.55; max-width: 780px; }
+  .notes-on .pnote { display: block; }
+  .pnote .h { font-family: var(--mono); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+  .pnote ul { margin: 0; padding-left: 18px; } .pnote li { margin-bottom: 4px; }
+  .pnote dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; }
+  .pnote dt { font-weight: 700; color: var(--amber); } .pnote dd { margin: 0; }
+  .ex { display: none; margin-top: 12px; font-family: var(--mono); font-size: 12.5px; }
+  .notes-on .ex { display: inline-block; }
+  .ex a { color: var(--amber); text-decoration: none; border-bottom: 1px solid rgba(255,176,32,.4); }
+  .ex a::before { content: "▶ "; }
+  .ntoggle { position: fixed; left: 16px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 10; font: 600 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--amber); background: rgba(17,19,22,.9); border: 1px solid var(--amber); padding: 6px 10px; cursor: pointer; display: none; }
+  .notes-on .ntoggle { display: block; }
+  @media (max-width: 760px) { .pnote dl { grid-template-columns: 1fr; } }
   @media (max-width: 760px) {
     body { font-size: 16px; }
     .calc, .split { grid-template-columns: 1fr; }
@@ -343,7 +358,7 @@
       <div class="cell rv"><span class="tag">Wiedererkennung</span><h3>Gießen im ersten Satz</h3><p>Orte, die jeder kennt, Sprache aus der Region, „Gießen“ im Text und im Bild. Wer aus der Gegend ist, bleibt hängen.</p></div>
       <div class="cell rv d1"><span class="tag">Standort</span><h3>Geotag &amp; lokale Hashtags</h3><p>Jeder Beitrag mit Standort Heuchelheim/Gießen. So landet er bei Leuten, die in der Nähe sind oder dort suchen.</p></div>
       <div class="cell rv d2"><span class="tag">Netzwerk</span><h3>Lokale Partner</h3><p>Gießener Creators, Vereine, Hochschulsport, Fachschaften, Firmen. Deren Follower sind eure Nachbarn.</p></div>
-      <div class="cell rv"><span class="tag">Straße</span><h3>Drehen in der Stadt</h3><p>Umfragen und Aktionen in Gießen selbst. Die Leute sehen sich und ihre Freunde im Video und teilen es.</p></div>
+      <div class="cell rv"><span class="tag">Straße</span><h3>Drehen in der Stadt</h3><p>Umfragen und Aktionen in Gießen selbst. Die Leute sehen sich und ihre Freunde im Video und teilen es.</p><span class="ex"><a href="https://www.tiktok.com/search?q=straßenumfrage" target="_blank" rel="noopener">Beispiele: Straßenumfragen</a></span></div>
       <div class="cell rv d1"><span class="tag">Werbung</span><h3>Anzeigen im 25-km-Radius</h3><p>Die besten Videos gezielt nur in der Region bewerben. Jeder Euro erreicht Menschen, die auch kommen können.</p></div>
       <div class="cell rv d2"><span class="tag">Messen</span><h3>Top-Städte statt Aufrufe</h3><p>Wir schauen in der Statistik, wie viele Zuschauer aus Gießen kommen, und zählen an der Kasse die eingelösten Codes.</p></div>
     </div>
@@ -479,10 +494,10 @@
     <h2 class="rv">Wir drehen nicht nur Werbung. Wir drehen eure Geschichte.</h2>
     <p class="lead rv d1">Menschen lieben es, dabei zu sein, wenn etwas entsteht. Genau so sind Kanäle wie JP Performance groß geworden: Man verfolgt echte Leute bei einem echten Projekt, mit allen Erfolgen und allen Problemen. Kart&amp;Fun hat genau diese Geschichte, und sie passiert jetzt.</p>
     <div class="grid">
-      <div class="cell rv"><span class="tag">YouTube-Serie</span><h3>Das Projekt Kart&amp;Fun</h3><p>Eine Doku-Serie vom Aufbau bis zur Eröffnung und darüber hinaus. Was läuft, was schiefgeht, welche Entscheidungen anstehen. Ehrlich, auch wenn es mal hakt. Genau das macht es sehenswert.</p></div>
-      <div class="cell rv d1"><span class="tag">Interview</span><h3>Warum wir das machen</h3><p>Ein richtiges Interview-Setup mit zwei Kameras, Licht und sauberem Ton. Die Jungs erzählen, warum, wieso, weshalb. Aus einem Interview werden ein langes Video und viele kurze Clips.</p></div>
-      <div class="cell rv d2"><span class="tag">One-Take-Tour</span><h3>Mit dem Kart durch jede Ebene</h3><p>Leon fährt mit dem Kart in den Lastenaufzug, hält auf jeder Ebene, fährt durch und erklärt, was wohin kommt. Eine Hallentour, die man so noch nicht gesehen hat.</p></div>
-      <div class="cell rv"><span class="tag">Motorsport</span><h3>Leon on Track</h3><p>Wir begleiten Leon zu seinen eigenen Rennen. Der Mann hinter der Bahn fährt selbst, und das macht die Kartbahn glaubwürdig wie nichts anderes.</p></div>
+      <div class="cell rv"><span class="tag">YouTube-Serie</span><h3>Das Projekt Kart&amp;Fun</h3><p>Eine Doku-Serie vom Aufbau bis zur Eröffnung und darüber hinaus. Was läuft, was schiefgeht, welche Entscheidungen anstehen. Ehrlich, auch wenn es mal hakt. Genau das macht es sehenswert.</p><span class="ex"><a href="https://www.youtube.com/results?search_query=JP+Performance+halle+umbau" target="_blank" rel="noopener">Beispiele: JP Performance auf YouTube</a></span></div>
+      <div class="cell rv d1"><span class="tag">Interview</span><h3>Warum wir das machen</h3><p>Ein richtiges Interview-Setup mit zwei Kameras, Licht und sauberem Ton. Die Jungs erzählen, warum, wieso, weshalb. Aus einem Interview werden ein langes Video und viele kurze Clips.</p><span class="ex"><a href="https://www.youtube.com/results?search_query=two+camera+interview+setup+tutorial" target="_blank" rel="noopener">Beispiele: Zwei-Kamera-Interview-Setup</a></span></div>
+      <div class="cell rv d2"><span class="tag">One-Take-Tour</span><h3>Mit dem Kart durch jede Ebene</h3><p>Leon fährt mit dem Kart in den Lastenaufzug, hält auf jeder Ebene, fährt durch und erklärt, was wohin kommt. Eine Hallentour, die man so noch nicht gesehen hat.</p><span class="ex"><a href="https://www.youtube.com/results?search_query=one+take+tour+video" target="_blank" rel="noopener">Beispiele: One-Take-Touren</a></span></div>
+      <div class="cell rv"><span class="tag">Motorsport</span><h3>Leon on Track</h3><p>Wir begleiten Leon zu seinen eigenen Rennen. Der Mann hinter der Bahn fährt selbst, und das macht die Kartbahn glaubwürdig wie nichts anderes.</p><span class="ex"><a href="https://www.youtube.com/results?search_query=kart+race+vlog+onboard" target="_blank" rel="noopener">Beispiele: Kart-Renn-Vlogs</a></span></div>
     </div>
     <h3 class="rv" style="margin-top:72px">Ein Dreh, viele Inhalte</h3>
     <div class="stats">
@@ -501,15 +516,15 @@
     <h2 class="rv">Was wir drehen.</h2>
     <p class="lead rv d1">Geschwindigkeit, Wettkampf, etwas Neues und echte Menschen: Eine E-Kartbahn hat alles, was auf Social Media funktioniert.</p>
     <div class="grid">
-      <div class="cell rv"><span class="tag">Bis zur Eröffnung</span><h3>Hier entsteht Gießens erste E-Kartbahn</h3><p>Die Serie über den Aufbau: von der leeren Halle bis zur fertigen Strecke. Wer zuschaut, will am Ende selbst fahren.</p></div>
-      <div class="cell rv d1"><span class="tag">Bis zur Eröffnung</span><h3>Die ersten Testrunden</h3><p>Ihr selbst, zum ersten Mal auf der Strecke. Der erste Rundenrekord, den Gäste später schlagen wollen.</p></div>
-      <div class="cell rv d2"><span class="tag">Eröffnung</span><h3>Opening-Event</h3><p>Countdown, Gewinnspiel „Sei unter den ersten Fahrern“, lokale Creators vor Ort, Aftermovie.</p></div>
-      <div class="cell rv"><span class="tag">Serie</span><h3>Benziner gegen Elektro</h3><p>Hungen gegen Heuchelheim: Honda-Kart gegen E-Kart. Ein Duell, das beide Bahnen bekannt macht.</p></div>
-      <div class="cell rv d1"><span class="tag">Serie</span><h3>Chef gegen Stellvertreter</h3><p>Geschäftsführer gegen Leon: auf der Strecke, am Dartboard, am Billardtisch. Der Verlierer muss etwas einlösen.</p></div>
-      <div class="cell rv d2"><span class="tag">Serie</span><h3>Bestzeit der Woche</h3><p>Die schnellste Runde mit Onboard-Aufnahme und Reaktion. Gäste kommen wieder, um auf die Liste zu kommen.</p></div>
-      <div class="cell rv"><span class="tag">Action</span><h3>POV: 350 Meter mitfahren</h3><p>Eine volle Runde aus Fahrersicht, sofortige E-Beschleunigung, kaum Geräusch, keine Abgase.</p></div>
-      <div class="cell rv d1"><span class="tag">Abendprogramm</span><h3>Rennen, Darts, Billard</h3><p>„Der perfekte Abend in Gießen“: Das Format verkauft Gruppen- und Firmenabende.</p></div>
-      <div class="cell rv d2"><span class="tag">Wetter</span><h3>Regen? Egal.</h3><p>Draußen Schmuddelwetter, drinnen Vollgas. Genau dann posten, wenn alle nach Ideen suchen.</p></div>
+      <div class="cell rv"><span class="tag">Bis zur Eröffnung</span><h3>Hier entsteht Gießens erste E-Kartbahn</h3><p>Die Serie über den Aufbau: von der leeren Halle bis zur fertigen Strecke. Wer zuschaut, will am Ende selbst fahren.</p><span class="ex"><a href="https://www.tiktok.com/search?q=kartbahn%20bau" target="_blank" rel="noopener">Beispiele: Baustellen-Content auf TikTok</a></span></div>
+      <div class="cell rv d1"><span class="tag">Bis zur Eröffnung</span><h3>Die ersten Testrunden</h3><p>Ihr selbst, zum ersten Mal auf der Strecke. Der erste Rundenrekord, den Gäste später schlagen wollen.</p><span class="ex"><a href="https://www.tiktok.com/search?q=first%20time%20go%20kart%20reaction" target="_blank" rel="noopener">Beispiele: erste Runde, Reaktionen</a></span></div>
+      <div class="cell rv d2"><span class="tag">Eröffnung</span><h3>Opening-Event</h3><p>Countdown, Gewinnspiel „Sei unter den ersten Fahrern“, lokale Creators vor Ort, Aftermovie.</p><span class="ex"><a href="https://www.youtube.com/results?search_query=grand+opening+aftermovie" target="_blank" rel="noopener">Beispiele: Eröffnungs-Aftermovies</a></span></div>
+      <div class="cell rv"><span class="tag">Serie</span><h3>Benziner gegen Elektro</h3><p>Hungen gegen Heuchelheim: Honda-Kart gegen E-Kart. Ein Duell, das beide Bahnen bekannt macht.</p><span class="ex"><a href="https://www.youtube.com/results?search_query=elektro+kart+vs+benzin+kart" target="_blank" rel="noopener">Beispiele: E-Kart gegen Benziner</a></span></div>
+      <div class="cell rv d1"><span class="tag">Serie</span><h3>Chef gegen Stellvertreter</h3><p>Geschäftsführer gegen Leon: auf der Strecke, am Dartboard, am Billardtisch. Der Verlierer muss etwas einlösen.</p><span class="ex"><a href="https://www.tiktok.com/search?q=chef%20vs%20mitarbeiter%20challenge" target="_blank" rel="noopener">Beispiele: Chef gegen Mitarbeiter</a></span></div>
+      <div class="cell rv d2"><span class="tag">Serie</span><h3>Bestzeit der Woche</h3><p>Die schnellste Runde mit Onboard-Aufnahme und Reaktion. Gäste kommen wieder, um auf die Liste zu kommen.</p><span class="ex"><a href="https://www.tiktok.com/search?q=kartbahn%20bestzeit" target="_blank" rel="noopener">Beispiele: Bestzeit-Formate</a></span></div>
+      <div class="cell rv"><span class="tag">Action</span><h3>POV: 350 Meter mitfahren</h3><p>Eine volle Runde aus Fahrersicht, sofortige E-Beschleunigung, kaum Geräusch, keine Abgase.</p><span class="ex"><a href="https://www.tiktok.com/search?q=go%20kart%20pov" target="_blank" rel="noopener">Beispiele: Kart-POV</a></span></div>
+      <div class="cell rv d1"><span class="tag">Abendprogramm</span><h3>Rennen, Darts, Billard</h3><p>„Der perfekte Abend in Gießen“: Das Format verkauft Gruppen- und Firmenabende.</p><span class="ex"><a href="https://www.tiktok.com/search?q=perfekter%20abend%20mit%20freunden%20aktivität" target="_blank" rel="noopener">Beispiele: „Perfekter Abend“-Videos</a></span></div>
+      <div class="cell rv d2"><span class="tag">Wetter</span><h3>Regen? Egal.</h3><p>Draußen Schmuddelwetter, drinnen Vollgas. Genau dann posten, wenn alle nach Ideen suchen.</p><span class="ex"><a href="https://www.tiktok.com/search?q=regen%20was%20machen%20indoor" target="_blank" rel="noopener">Beispiele: Schlechtwetter-Content</a></span></div>
     </div>
   </div>
 </section>
@@ -544,7 +559,7 @@
       <div class="stat hl rv d1"><div class="n" style="font-size:clamp(34px,4.4vw,52px)">Eröffnung</div><div class="l">Gewinnspiel mit Markieren. Reichweite in der Region.</div></div>
       <div class="stat rv d2"><div class="n" style="font-size:clamp(34px,4.4vw,52px)">Danach</div><div class="l">FIRMA für Gruppen, Wochentags-Codes für ruhige Zeiten.</div></div>
     </div>
-    <p class="src">Die Automatik läuft über ein Tool wie ManyChat auf eurem Instagram-Account. Die Einrichtung übernehmen wir als Zusatzleistung, die Tool-Kosten laufen über euch.</p>
+    <p class="src">Die Automatik läuft über ein Tool wie ManyChat auf eurem Instagram-Account. Die Einrichtung übernehmen wir als Zusatzleistung, die Tool-Kosten laufen über euch.</p><span class="ex"><a href="https://www.youtube.com/results?search_query=manychat+instagram+kommentar+automatisierung" target="_blank" rel="noopener">So funktioniert ManyChat</a></span>
   </div>
 </section>
 
@@ -734,10 +749,98 @@
       P[bt.dataset.p].forEach(function (val, i) { inp[i].value = val; });
       btns.forEach(function (o) { o.setAttribute('aria-pressed', o === bt ? 'true' : 'false'); });
       fcalc();
+
+  // Presenter notes (only with #notizen or key N)
+  var NOTES = {
+    Start: '<div class="h">Nur für dich · Begriffe einfach erklärt</div><dl>' +
+      '<dt>Reel</dt><dd>Kurzes Hochkant-Video auf Instagram (bei TikTok/YouTube heißt es Short).</dd>' +
+      '<dt>Hook</dt><dd>Die ersten 1–2 Sekunden. Entscheiden, ob jemand weiterschaut.</dd>' +
+      '<dt>Algorithmus</dt><dd>Instagram zeigt jedes Video erst wenigen Leuten. Schauen die es zu Ende, zeigt es mehr Leuten. Wer regelmäßig Gutes postet, bekommt mehr Vertrauen.</dd>' +
+      '<dt>Aufrufe / Reichweite</dt><dd>Aufrufe = wie oft abgespielt. Reichweite = wie viele verschiedene Menschen es gesehen haben.</dd>' +
+      '<dt>Conversion</dt><dd>Wie viele von denen, die schauen, am Ende wirklich buchen.</dd>' +
+      '<dt>Funnel</dt><dd>Der Weg vom Video bis zur Kasse: sehen → Profil → Nachricht → Buchung.</dd>' +
+      '<dt>CTA</dt><dd>Aufforderung im Video, z. B. „Kommentiere RACE“.</dd></dl>' +
+      '<p style="margin:12px 0 0">Ablauf: erst Testvideo zeigen, dann hier langsam runterscrollen und die Zahlen hochzählen lassen. Taste N blendet diese Notizen ein und aus.</p>',
+    Markt: '<div class="h">Sag</div><ul><li>„In Gießen selbst gibt es bisher keine Indoor-Kartbahn.“</li><li>Nicht sagen „einzige E-Kartbahn im Umkreis“: Kartland Sinn (26 km) hat auch E-Karts.</li><li>39.000 Studierende = eure größte Zielgruppe direkt vor der Tür.</li></ul>',
+    Zielgruppe: '<div class="h">Sag</div><ul><li>„9 von 10 jungen Leuten sind jede Woche auf Social Media. Da sind eure Gäste.“</li><li>Quelle ist die ARD/ZDF-Medienstudie 2025, also seriös.</li></ul>',
+    Vorsprung: '<div class="h">Sag &amp; frag</div><ul><li>Lob: 1.208 Follower ohne einen Beitrag ist stark.</li><li>Frag: „Wer hat den Account bisher gemacht? Was habt ihr schon probiert?“</li></ul>',
+    Nutzen: '<div class="h">Kurz halten</div><ul><li>Kernsatz: „Gruppen und Firmenfeiern sind das große Geld, und die kommen über Videos, die jemand in die WhatsApp-Gruppe schickt.“</li></ul>',
+    Lokal: '<div class="h">Dein wichtigster Punkt</div><ul><li>„Ich verspreche euch keine Klicks. Ich will Leute aus Gießen an eure Kasse bringen.“</li><li>Das Beispiel zeigt: weniger Aufrufe, aber mehr mögliche Gäste. Das ist deine ganze Philosophie.</li><li>In der Instagram-Statistik gibt es „Top-Städte“. Daran messen wir, nicht an Aufrufen.</li></ul>',
+    Rechnung: '<div class="h">Mach</div><ul><li>Lass Leon oder den Chef selbst die Regler schieben. Wer selbst rechnet, glaubt es.</li><li>Merksatz: „Eine Firmenfeier im Monat, und das Paket ist bezahlt.“</li></ul>',
+    Potenzial: '<div class="h">Mach &amp; sag</div><ul><li>Reihenfolge: erst „Vorsichtig“ klicken, dann „Realistisch“, dann „Boom“.</li><li>„Das ist eine Rechnung mit Annahmen, keine Garantie. Aber selbst vorsichtig trägt es sich.“</li><li>Weihnachtsfeiern und Gutscheine betonen: Eröffnung am 1.12. ist perfektes Timing.</li></ul>',
+    'Kontinuität': '<div class="h">Einfach erklärt</div><ul><li>„Instagram muss euch erst kennenlernen. Wer nach 2 Monaten aufhört, hört genau dann auf, wenn es anfängt zu wirken.“</li><li>Vergleich Fitnessstudio: einmal hingehen bringt nichts.</li><li>Darum 6 Monate Minimum. Nicht verhandeln.</li></ul>',
+    'Qualität': '<div class="h">Sag</div><ul><li>„Lieber alle 3 Tage ein richtig gutes Video als jeden Tag Müll. Schlechte Videos bremsen den ganzen Kanal.“</li><li>Nicht über die Handy-Videografen lästern. Die Tabelle spricht für sich.</li></ul>',
+    Doku: '<div class="h">Sag &amp; frag</div><ul><li>Das ist Zusatzgeschäft, separates Angebot, nicht im Paket.</li><li>Frag Leon: „Wann ist dein nächstes Rennen?“</li><li>Interview: Licht und Funkmikro leihen. Ton ist wichtiger als Bild.</li><li>Unter jeder Idee gibt es Beispiel-Links. Vorher selbst anschauen.</li></ul>',
+    Content: '<div class="h">Tipp</div><ul><li>Unter jeder Idee: ▶ Beispiel-Link. Schau sie dir vorher an, dann kannst du es besser beschreiben.</li><li>Frag: „Welche Idee gefällt euch am meisten?“ Die wird das erste Video.</li></ul>',
+    Aktionen: '<div class="h">Einfach erklärt</div><ul><li>ManyChat = ein Anrufbeantworter für Kommentare. Jemand schreibt RACE, bekommt sofort eine Nachricht mit Code.</li><li>„Wir geben lieber etwas dazu, statt den Preis zu senken.“</li><li>Einrichtung 250 € einmalig. Tool-Kosten zahlen sie selbst.</li></ul>',
+    Rollen: '<div class="h">Klar sagen</div><ul><li>„Storys und Nachrichten macht ihr. Das ist Pflicht, sonst verpufft die Hälfte.“</li><li>Frag direkt: „Wer bei euch übernimmt das?“ Namen festhalten.</li></ul>',
+    Ablauf: '<div class="h">Kurz</div><ul><li>Einfach durchgehen. Wichtig: 48 Stunden Freigabe, sonst gilt es als freigegeben.</li></ul>',
+    Laufzeit: '<div class="h">Verkaufen</div><ul><li>12 Monate empfehlen, dann wirken 6 Monate als leichter Einstieg.</li><li>Vorauszahlung erwähnen: ganze Laufzeit auf einmal möglich.</li><li>„Wenn ihr wachst, wird es eher teurer. Früh einsteigen sichert den Preis für ein Jahr.“</li></ul>',
+    Ziel: '<div class="h">Abschluss</div><ul><li>Jetzt die PDF rausholen: Laufzeit und Zahlweise ankreuzen, Startdatum, unterschreiben.</li><li>Nicht mehr viel reden. Frag: „Womit wollen wir starten?“</li></ul>'
+  };
+  document.querySelectorAll('section').forEach(function (sec) {
+    var key = sec.classList.contains('hero') ? 'Start' : (sec.dataset.sec || '').replace(/^S\d+ · /, '');
+    if (!NOTES[key]) return;
+    var n = document.createElement('div'); n.className = 'pnote'; n.innerHTML = NOTES[key];
+    var w = sec.querySelector('.wrap'); w.insertBefore(n, w.firstChild);
+  });
+  var tb = document.createElement('button'); tb.className = 'ntoggle'; tb.type = 'button'; tb.textContent = 'Notizen aus (N)';
+  document.body.appendChild(tb);
+  function setNotes(on) { document.documentElement.classList.toggle('notes-on', on); }
+  tb.addEventListener('click', function () { setNotes(false); });
+  if (location.hash === '#notizen') setNotes(true);
+  addEventListener('hashchange', function () { setNotes(location.hash === '#notizen'); });
+  addEventListener('keydown', function (e) {
+    if ((e.key === 'n' || e.key === 'N') && !/INPUT|TEXTAREA|BUTTON/.test(e.target.tagName)) setNotes(!document.documentElement.classList.contains('notes-on'));
+  });
     });
   });
   inp.forEach(function (i) { i.addEventListener('input', function () { btns.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); }); fcalc(); }); });
   fcalc();
+
+  // Presenter notes (only with #notizen or key N)
+  var NOTES = {
+    Start: '<div class="h">Nur für dich · Begriffe einfach erklärt</div><dl>' +
+      '<dt>Reel</dt><dd>Kurzes Hochkant-Video auf Instagram (bei TikTok/YouTube heißt es Short).</dd>' +
+      '<dt>Hook</dt><dd>Die ersten 1–2 Sekunden. Entscheiden, ob jemand weiterschaut.</dd>' +
+      '<dt>Algorithmus</dt><dd>Instagram zeigt jedes Video erst wenigen Leuten. Schauen die es zu Ende, zeigt es mehr Leuten. Wer regelmäßig Gutes postet, bekommt mehr Vertrauen.</dd>' +
+      '<dt>Aufrufe / Reichweite</dt><dd>Aufrufe = wie oft abgespielt. Reichweite = wie viele verschiedene Menschen es gesehen haben.</dd>' +
+      '<dt>Conversion</dt><dd>Wie viele von denen, die schauen, am Ende wirklich buchen.</dd>' +
+      '<dt>Funnel</dt><dd>Der Weg vom Video bis zur Kasse: sehen → Profil → Nachricht → Buchung.</dd>' +
+      '<dt>CTA</dt><dd>Aufforderung im Video, z. B. „Kommentiere RACE“.</dd></dl>' +
+      '<p style="margin:12px 0 0">Ablauf: erst Testvideo zeigen, dann hier langsam runterscrollen und die Zahlen hochzählen lassen. Taste N blendet diese Notizen ein und aus.</p>',
+    Markt: '<div class="h">Sag</div><ul><li>„In Gießen selbst gibt es bisher keine Indoor-Kartbahn.“</li><li>Nicht sagen „einzige E-Kartbahn im Umkreis“: Kartland Sinn (26 km) hat auch E-Karts.</li><li>39.000 Studierende = eure größte Zielgruppe direkt vor der Tür.</li></ul>',
+    Zielgruppe: '<div class="h">Sag</div><ul><li>„9 von 10 jungen Leuten sind jede Woche auf Social Media. Da sind eure Gäste.“</li><li>Quelle ist die ARD/ZDF-Medienstudie 2025, also seriös.</li></ul>',
+    Vorsprung: '<div class="h">Sag &amp; frag</div><ul><li>Lob: 1.208 Follower ohne einen Beitrag ist stark.</li><li>Frag: „Wer hat den Account bisher gemacht? Was habt ihr schon probiert?“</li></ul>',
+    Nutzen: '<div class="h">Kurz halten</div><ul><li>Kernsatz: „Gruppen und Firmenfeiern sind das große Geld, und die kommen über Videos, die jemand in die WhatsApp-Gruppe schickt.“</li></ul>',
+    Lokal: '<div class="h">Dein wichtigster Punkt</div><ul><li>„Ich verspreche euch keine Klicks. Ich will Leute aus Gießen an eure Kasse bringen.“</li><li>Das Beispiel zeigt: weniger Aufrufe, aber mehr mögliche Gäste. Das ist deine ganze Philosophie.</li><li>In der Instagram-Statistik gibt es „Top-Städte“. Daran messen wir, nicht an Aufrufen.</li></ul>',
+    Rechnung: '<div class="h">Mach</div><ul><li>Lass Leon oder den Chef selbst die Regler schieben. Wer selbst rechnet, glaubt es.</li><li>Merksatz: „Eine Firmenfeier im Monat, und das Paket ist bezahlt.“</li></ul>',
+    Potenzial: '<div class="h">Mach &amp; sag</div><ul><li>Reihenfolge: erst „Vorsichtig“ klicken, dann „Realistisch“, dann „Boom“.</li><li>„Das ist eine Rechnung mit Annahmen, keine Garantie. Aber selbst vorsichtig trägt es sich.“</li><li>Weihnachtsfeiern und Gutscheine betonen: Eröffnung am 1.12. ist perfektes Timing.</li></ul>',
+    'Kontinuität': '<div class="h">Einfach erklärt</div><ul><li>„Instagram muss euch erst kennenlernen. Wer nach 2 Monaten aufhört, hört genau dann auf, wenn es anfängt zu wirken.“</li><li>Vergleich Fitnessstudio: einmal hingehen bringt nichts.</li><li>Darum 6 Monate Minimum. Nicht verhandeln.</li></ul>',
+    'Qualität': '<div class="h">Sag</div><ul><li>„Lieber alle 3 Tage ein richtig gutes Video als jeden Tag Müll. Schlechte Videos bremsen den ganzen Kanal.“</li><li>Nicht über die Handy-Videografen lästern. Die Tabelle spricht für sich.</li></ul>',
+    Doku: '<div class="h">Sag &amp; frag</div><ul><li>Das ist Zusatzgeschäft, separates Angebot, nicht im Paket.</li><li>Frag Leon: „Wann ist dein nächstes Rennen?“</li><li>Interview: Licht und Funkmikro leihen. Ton ist wichtiger als Bild.</li><li>Unter jeder Idee gibt es Beispiel-Links. Vorher selbst anschauen.</li></ul>',
+    Content: '<div class="h">Tipp</div><ul><li>Unter jeder Idee: ▶ Beispiel-Link. Schau sie dir vorher an, dann kannst du es besser beschreiben.</li><li>Frag: „Welche Idee gefällt euch am meisten?“ Die wird das erste Video.</li></ul>',
+    Aktionen: '<div class="h">Einfach erklärt</div><ul><li>ManyChat = ein Anrufbeantworter für Kommentare. Jemand schreibt RACE, bekommt sofort eine Nachricht mit Code.</li><li>„Wir geben lieber etwas dazu, statt den Preis zu senken.“</li><li>Einrichtung 250 € einmalig. Tool-Kosten zahlen sie selbst.</li></ul>',
+    Rollen: '<div class="h">Klar sagen</div><ul><li>„Storys und Nachrichten macht ihr. Das ist Pflicht, sonst verpufft die Hälfte.“</li><li>Frag direkt: „Wer bei euch übernimmt das?“ Namen festhalten.</li></ul>',
+    Ablauf: '<div class="h">Kurz</div><ul><li>Einfach durchgehen. Wichtig: 48 Stunden Freigabe, sonst gilt es als freigegeben.</li></ul>',
+    Laufzeit: '<div class="h">Verkaufen</div><ul><li>12 Monate empfehlen, dann wirken 6 Monate als leichter Einstieg.</li><li>Vorauszahlung erwähnen: ganze Laufzeit auf einmal möglich.</li><li>„Wenn ihr wachst, wird es eher teurer. Früh einsteigen sichert den Preis für ein Jahr.“</li></ul>',
+    Ziel: '<div class="h">Abschluss</div><ul><li>Jetzt die PDF rausholen: Laufzeit und Zahlweise ankreuzen, Startdatum, unterschreiben.</li><li>Nicht mehr viel reden. Frag: „Womit wollen wir starten?“</li></ul>'
+  };
+  document.querySelectorAll('section').forEach(function (sec) {
+    var key = sec.classList.contains('hero') ? 'Start' : (sec.dataset.sec || '').replace(/^S\d+ · /, '');
+    if (!NOTES[key]) return;
+    var n = document.createElement('div'); n.className = 'pnote'; n.innerHTML = NOTES[key];
+    var w = sec.querySelector('.wrap'); w.insertBefore(n, w.firstChild);
+  });
+  var tb = document.createElement('button'); tb.className = 'ntoggle'; tb.type = 'button'; tb.textContent = 'Notizen aus (N)';
+  document.body.appendChild(tb);
+  function setNotes(on) { document.documentElement.classList.toggle('notes-on', on); }
+  tb.addEventListener('click', function () { setNotes(false); });
+  if (location.hash === '#notizen') setNotes(true);
+  addEventListener('hashchange', function () { setNotes(location.hash === '#notizen'); });
+  addEventListener('keydown', function (e) {
+    if ((e.key === 'n' || e.key === 'N') && !/INPUT|TEXTAREA|BUTTON/.test(e.target.tagName)) setNotes(!document.documentElement.classList.contains('notes-on'));
+  });
 
 })();
 </script>
