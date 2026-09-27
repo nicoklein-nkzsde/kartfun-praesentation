@@ -749,50 +749,6 @@
       P[bt.dataset.p].forEach(function (val, i) { inp[i].value = val; });
       btns.forEach(function (o) { o.setAttribute('aria-pressed', o === bt ? 'true' : 'false'); });
       fcalc();
-
-  // Presenter notes (only with #notizen or key N)
-  var NOTES = {
-    Start: '<div class="h">Nur für dich · Begriffe einfach erklärt</div><dl>' +
-      '<dt>Reel</dt><dd>Kurzes Hochkant-Video auf Instagram (bei TikTok/YouTube heißt es Short).</dd>' +
-      '<dt>Hook</dt><dd>Die ersten 1–2 Sekunden. Entscheiden, ob jemand weiterschaut.</dd>' +
-      '<dt>Algorithmus</dt><dd>Instagram zeigt jedes Video erst wenigen Leuten. Schauen die es zu Ende, zeigt es mehr Leuten. Wer regelmäßig Gutes postet, bekommt mehr Vertrauen.</dd>' +
-      '<dt>Aufrufe / Reichweite</dt><dd>Aufrufe = wie oft abgespielt. Reichweite = wie viele verschiedene Menschen es gesehen haben.</dd>' +
-      '<dt>Conversion</dt><dd>Wie viele von denen, die schauen, am Ende wirklich buchen.</dd>' +
-      '<dt>Funnel</dt><dd>Der Weg vom Video bis zur Kasse: sehen → Profil → Nachricht → Buchung.</dd>' +
-      '<dt>CTA</dt><dd>Aufforderung im Video, z. B. „Kommentiere RACE“.</dd></dl>' +
-      '<p style="margin:12px 0 0">Ablauf: erst Testvideo zeigen, dann hier langsam runterscrollen und die Zahlen hochzählen lassen. Taste N blendet diese Notizen ein und aus.</p>',
-    Markt: '<div class="h">Sag</div><ul><li>„In Gießen selbst gibt es bisher keine Indoor-Kartbahn.“</li><li>Nicht sagen „einzige E-Kartbahn im Umkreis“: Kartland Sinn (26 km) hat auch E-Karts.</li><li>39.000 Studierende = eure größte Zielgruppe direkt vor der Tür.</li></ul>',
-    Zielgruppe: '<div class="h">Sag</div><ul><li>„9 von 10 jungen Leuten sind jede Woche auf Social Media. Da sind eure Gäste.“</li><li>Quelle ist die ARD/ZDF-Medienstudie 2025, also seriös.</li></ul>',
-    Vorsprung: '<div class="h">Sag &amp; frag</div><ul><li>Lob: 1.208 Follower ohne einen Beitrag ist stark.</li><li>Frag: „Wer hat den Account bisher gemacht? Was habt ihr schon probiert?“</li></ul>',
-    Nutzen: '<div class="h">Kurz halten</div><ul><li>Kernsatz: „Gruppen und Firmenfeiern sind das große Geld, und die kommen über Videos, die jemand in die WhatsApp-Gruppe schickt.“</li></ul>',
-    Lokal: '<div class="h">Dein wichtigster Punkt</div><ul><li>„Ich verspreche euch keine Klicks. Ich will Leute aus Gießen an eure Kasse bringen.“</li><li>Das Beispiel zeigt: weniger Aufrufe, aber mehr mögliche Gäste. Das ist deine ganze Philosophie.</li><li>In der Instagram-Statistik gibt es „Top-Städte“. Daran messen wir, nicht an Aufrufen.</li></ul>',
-    Rechnung: '<div class="h">Mach</div><ul><li>Lass Leon oder den Chef selbst die Regler schieben. Wer selbst rechnet, glaubt es.</li><li>Merksatz: „Eine Firmenfeier im Monat, und das Paket ist bezahlt.“</li></ul>',
-    Potenzial: '<div class="h">Mach &amp; sag</div><ul><li>Reihenfolge: erst „Vorsichtig“ klicken, dann „Realistisch“, dann „Boom“.</li><li>„Das ist eine Rechnung mit Annahmen, keine Garantie. Aber selbst vorsichtig trägt es sich.“</li><li>Weihnachtsfeiern und Gutscheine betonen: Eröffnung am 1.12. ist perfektes Timing.</li></ul>',
-    'Kontinuität': '<div class="h">Einfach erklärt</div><ul><li>„Instagram muss euch erst kennenlernen. Wer nach 2 Monaten aufhört, hört genau dann auf, wenn es anfängt zu wirken.“</li><li>Vergleich Fitnessstudio: einmal hingehen bringt nichts.</li><li>Darum 6 Monate Minimum. Nicht verhandeln.</li></ul>',
-    'Qualität': '<div class="h">Sag</div><ul><li>„Lieber alle 3 Tage ein richtig gutes Video als jeden Tag Müll. Schlechte Videos bremsen den ganzen Kanal.“</li><li>Nicht über die Handy-Videografen lästern. Die Tabelle spricht für sich.</li></ul>',
-    Doku: '<div class="h">Sag &amp; frag</div><ul><li>Das ist Zusatzgeschäft, separates Angebot, nicht im Paket.</li><li>Frag Leon: „Wann ist dein nächstes Rennen?“</li><li>Interview: Licht und Funkmikro leihen. Ton ist wichtiger als Bild.</li><li>Unter jeder Idee gibt es Beispiel-Links. Vorher selbst anschauen.</li></ul>',
-    Content: '<div class="h">Tipp</div><ul><li>Unter jeder Idee: ▶ Beispiel-Link. Schau sie dir vorher an, dann kannst du es besser beschreiben.</li><li>Frag: „Welche Idee gefällt euch am meisten?“ Die wird das erste Video.</li></ul>',
-    Aktionen: '<div class="h">Einfach erklärt</div><ul><li>ManyChat = ein Anrufbeantworter für Kommentare. Jemand schreibt RACE, bekommt sofort eine Nachricht mit Code.</li><li>„Wir geben lieber etwas dazu, statt den Preis zu senken.“</li><li>Einrichtung 250 € einmalig. Tool-Kosten zahlen sie selbst.</li></ul>',
-    Rollen: '<div class="h">Klar sagen</div><ul><li>„Storys und Nachrichten macht ihr. Das ist Pflicht, sonst verpufft die Hälfte.“</li><li>Frag direkt: „Wer bei euch übernimmt das?“ Namen festhalten.</li></ul>',
-    Ablauf: '<div class="h">Kurz</div><ul><li>Einfach durchgehen. Wichtig: 48 Stunden Freigabe, sonst gilt es als freigegeben.</li></ul>',
-    Laufzeit: '<div class="h">Verkaufen</div><ul><li>12 Monate empfehlen, dann wirken 6 Monate als leichter Einstieg.</li><li>Vorauszahlung erwähnen: ganze Laufzeit auf einmal möglich.</li><li>„Wenn ihr wachst, wird es eher teurer. Früh einsteigen sichert den Preis für ein Jahr.“</li></ul>',
-    Ziel: '<div class="h">Abschluss</div><ul><li>Jetzt die PDF rausholen: Laufzeit und Zahlweise ankreuzen, Startdatum, unterschreiben.</li><li>Nicht mehr viel reden. Frag: „Womit wollen wir starten?“</li></ul>'
-  };
-  document.querySelectorAll('section').forEach(function (sec) {
-    var key = sec.classList.contains('hero') ? 'Start' : (sec.dataset.sec || '').replace(/^S\d+ · /, '');
-    if (!NOTES[key]) return;
-    var n = document.createElement('div'); n.className = 'pnote'; n.innerHTML = NOTES[key];
-    var w = sec.querySelector('.wrap'); w.insertBefore(n, w.firstChild);
-  });
-  var tb = document.createElement('button'); tb.className = 'ntoggle'; tb.type = 'button'; tb.textContent = 'Notizen aus (N)';
-  document.body.appendChild(tb);
-  function setNotes(on) { document.documentElement.classList.toggle('notes-on', on); }
-  tb.addEventListener('click', function () { setNotes(false); });
-  if (location.hash === '#notizen') setNotes(true);
-  addEventListener('hashchange', function () { setNotes(location.hash === '#notizen'); });
-  addEventListener('keydown', function (e) {
-    if ((e.key === 'n' || e.key === 'N') && !/INPUT|TEXTAREA|BUTTON/.test(e.target.tagName)) setNotes(!document.documentElement.classList.contains('notes-on'));
-  });
     });
   });
   inp.forEach(function (i) { i.addEventListener('input', function () { btns.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); }); fcalc(); }); });
